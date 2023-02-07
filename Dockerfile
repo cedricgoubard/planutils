@@ -31,5 +31,9 @@ RUN pip3 install setuptools
 RUN pip3 install planutils --trusted-host pypi.org --trusted-host files.pythonhosted.org
 RUN planutils setup
 
+SHELL [ "/bin/bash", "-c"  ]
+
+RUN planutils activate && planutils install -y lama && pip install flask
+
 # default command to execute when container starts
 CMD /bin/bash
